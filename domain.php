@@ -52,7 +52,8 @@
     ?>
         <div class="bar">
             <div class="breadcrumbs">
-                Home > Domains > <?php foreach ($domains as $row):?><?php echo $row['domainname']; ?><?php endforeach; ?>
+            <a href="index.php">Home > </a>
+            <?php foreach ($domains as $row):?><?php echo $row['domainname']; ?><?php endforeach; ?>
             </div>
             <div class="cta">
                 <a href="addscore.php?id=<?php echo $_GET['id']; ?>">Voeg score toe</a>
