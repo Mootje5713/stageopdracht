@@ -3,7 +3,7 @@
 
     $id = intval($_GET['id']);
 
-    $query = "SELECT * FROM `score` WHERE domain_id=$id ORDER BY id DESC";
+    $query = "SELECT * FROM `score` WHERE domain_id=$id ORDER BY id ASC";
     $result=$conn->query($query);
     if ( $result === FALSE) {
         echo "error" . $score . "<br />" . $conn->error;
@@ -52,7 +52,7 @@
     ?>
         <div class="bar">
             <div class="breadcrumbs">
-            <a href="index.php">Home > </a>
+            <a href="index.php">Home</a> >
             <?php foreach ($domains as $row):?><?php echo $row['domainname']; ?><?php endforeach; ?>
             </div>
             <div class="cta">
@@ -61,10 +61,7 @@
         </div>
         <div class="main">
 
-
-
             <?php foreach ($domains as $row):?>
-
                 <h1>
                 <?php echo $row['domainname']; ?>
                 </h1>
@@ -93,28 +90,68 @@
 
 
 <!-- alle tti waarden  bar colums-->
-<table class="charts-css column multiple">
-    <tr>
-    <th> <?php echo $row['datum']; ?> </th>
-    <?php foreach ($scores as $row):?>
-        <td><?php echo $row['tti']; ?></td>
-    <?php endforeach; ?>
-    </tr>
+
+<table class="charts-css column show-4-secondary-axes" style="height: 200px;">
+    <caption> Performance score </caption> 
+    <tbody>
+        <?php foreach ($scores as $row):?>
+            <tr style="--color: <?php if($row['score']<50) echo "red"; else echo "gray"; ?>;">
+                <th scope="row">date</th>
+                <td style="--size:<?php echo $row['score']/100; ?>;"><?php echo $row['score']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+
+    </tbody>
 </table>
+van 13-1 tot 2-3-2022
+
+<table class="charts-css column show-4-secondary-axes" style="height: 200px;">
+    <caption> Performance score </caption> 
+    <tbody>
+        <?php foreach ($scores as $row):?>
+            <tr style="--color: <?php if($row['speed']<50) echo "red"; else echo "gray"; ?>;">
+                <th scope="row">date</th>
+                <td style="--size:<?php echo $row['speed']/10000; ?>;"><?php echo $row['score']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<br>
 van 13-1 tot 2-3-2022
 
 <!-- alle speed index waarden -->
 
-<table class="charts-css column multiple">
-    <tr>
-    <th scope="row"> Label </th>
-    <?php foreach ($scores as $row):?>
-        <td><?php echo $row['speed']; ?></td> 
-    <?php endforeach; ?>
-    </tr>
+<table class="charts-css column show-4-secondary-axes" style="height: 200px;">
+    <caption> Performance score </caption> 
+    <tbody>
+        <?php foreach ($scores as $row):?>
+            <tr style="--color: <?php if($row['tti']<50) echo "red"; else echo "gray"; ?>;">
+                <th scope="row">date</th>
+                <td style="--size:<?php echo $row['tti']/10000; ?>;"><?php echo $row['score']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
 </table>
+<br>
+
 van 13-1 tot 2-3-2022
 
+
+<table class="charts-css column show-4-secondary-axes" style="height: 200px;">
+    <caption> Performance score </caption> 
+    <tbody>
+        <?php foreach ($scores as $row):?>
+            <tr style="--color: <?php if($row['fcp']<50) echo "red"; else echo "gray"; ?>;">
+                <th scope="row">date</th>
+                <td style="--size:<?php echo $row['fcp']/10000; ?>;"><?php echo $row['score']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<br>
+
+
+van 13-1 tot 2-3-2022
 
     <?php include "footer.php"; ?>
     

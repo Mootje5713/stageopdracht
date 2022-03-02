@@ -3,5 +3,5 @@ body, html {height: 100%;}
 
 .layout {display: flex; flex-direction: column; width: 100%; min-height: 100%;}
 .layout .topbar {display: flex; justify-content: space-between; padding: 15px;}
-.layout .bar {display: flex; background: red; justify-content: space-between; padding: 15px;}
+.layout .bar {display: flex; background: lightblue; justify-content: space-between; padding: 15px;}
 .layout .main {padding: 15px 30px;}

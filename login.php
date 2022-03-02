@@ -33,13 +33,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form method="POST">
         username <input type="text" name="username" id="username" required>
         <br>
         password <input type="password" name="wachtwoord" id="wachtwoord" required>
         <br>
+        nog geen account <a href="register.php">klik hier</a>
+
         <input type="submit" name="submit" value="sign in">
         </form>
-        nog geen account <a href="register.php">klik hier</a>
+
 </body>
 </html>
