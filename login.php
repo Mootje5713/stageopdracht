@@ -19,8 +19,8 @@
         }
     }
     if (isset($_SESSION['user_id'])) {
-        header("Location: index.php");
-    }
+        header('Location: index.php');
+    } 
     $conn->close();
 ?>
 
@@ -38,10 +38,8 @@
         <br>
         password <input type="password" name="wachtwoord" id="wachtwoord" required>
         <br>
-        nog geen account <a href="register.php">klik hier</a>
-
         <input type="submit" name="submit" value="sign in">
-        </form>
-
+    nog geen account <a href="register.php">klik hier</a>
+    </form>
 </body>
 </html>

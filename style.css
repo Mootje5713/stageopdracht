@@ -5,3 +5,15 @@ body, html {height: 100%;}
 .layout .topbar {display: flex; justify-content: space-between; padding: 15px;}
 .layout .bar {display: flex; background: lightblue; justify-content: space-between; padding: 15px;}
 .layout .main {padding: 15px 30px;}
+
+.logo > a > img {
+    display: block;
+    margin: -5px 0px -5px 0px;
+    border-radius: 100%;
+    width: 50px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}

@@ -67,33 +67,10 @@
                 </h1>
             <?php endforeach; ?>
 
-            
-
-    <?php if (isset($scores)): ?>
-        <ul>
-            <?php foreach ($scores as $row):?>
-                <li>Performance score: <?php echo $row['score']; ?>
-                <br>
-                speedindex: <?php echo $row['speed']; ?>
-                <br>
-                firstContentfulPaint: <?php echo $row['fcp']; ?>
-                <br>
-                time to interactive: <?php echo $row['tti']; ?>
-                <br>
-                timestamp: <?php echo $row['datum']; ?>
-            </li>
-                <br>
-                
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-
-
-<!-- alle tti waarden  bar colums-->
-
 <table class="charts-css column show-4-secondary-axes" style="height: 200px;">
     <caption> Performance score </caption> 
     <tbody>
+        <h1 class="box">Performance score</h1>
         <?php foreach ($scores as $row):?>
             <tr style="--color: <?php if($row['score']<50) echo "red"; else echo "gray"; ?>;">
                 <th scope="row">date</th>
@@ -103,53 +80,49 @@
 
     </tbody>
 </table>
-van 13-1 tot 2-3-2022
 
 <table class="charts-css column show-4-secondary-axes" style="height: 200px;">
     <caption> Performance score </caption> 
     <tbody>
+        <h1 class="box">Speed index</h1>
         <?php foreach ($scores as $row):?>
             <tr style="--color: <?php if($row['speed']<50) echo "red"; else echo "gray"; ?>;">
                 <th scope="row">date</th>
-                <td style="--size:<?php echo $row['speed']/10000; ?>;"><?php echo $row['score']; ?></td>
+                <td style="--size:<?php echo $row['speed']/10000; ?>;"><?php echo $row['speed']; ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
 <br>
-van 13-1 tot 2-3-2022
-
-<!-- alle speed index waarden -->
 
 <table class="charts-css column show-4-secondary-axes" style="height: 200px;">
     <caption> Performance score </caption> 
     <tbody>
+        <h1 class="box">Time to interactive</h1>
         <?php foreach ($scores as $row):?>
             <tr style="--color: <?php if($row['tti']<50) echo "red"; else echo "gray"; ?>;">
                 <th scope="row">date</th>
-                <td style="--size:<?php echo $row['tti']/10000; ?>;"><?php echo $row['score']; ?></td>
+                <td style="--size:<?php echo $row['tti']/10000; ?>;"><?php echo $row['tti']; ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
 <br>
-
-van 13-1 tot 2-3-2022
 
 
 <table class="charts-css column show-4-secondary-axes" style="height: 200px;">
     <caption> Performance score </caption> 
     <tbody>
+        <h1 class="box">FirstContentfulPaint</h1>
         <?php foreach ($scores as $row):?>
             <tr style="--color: <?php if($row['fcp']<50) echo "red"; else echo "gray"; ?>;">
                 <th scope="row">date</th>
-                <td style="--size:<?php echo $row['fcp']/10000; ?>;"><?php echo $row['score']; ?></td>
+                <td style="--size:<?php echo $row['fcp']/10000; ?>;"><?php echo $row['fcp']; ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
 <br>
-
 
 van 13-1 tot 2-3-2022
 

@@ -13,7 +13,7 @@
         <div class="topbar">
             <div class="logo">
                 <a href="index.php"> 
-                <img src="logo.jpg" style="width: 100px;"></a></div>
+                <img src="logo.jpg"></a></div>
             <div class="loginstatus">
                 <?php echo $_SESSION['username']; ?>
                 &nbsp;

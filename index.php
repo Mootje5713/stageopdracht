@@ -9,15 +9,16 @@
 
     } else {
     }
-    }
-    $query = "SELECT * FROM `domain` WHERE user_id='".$_SESSION["user_id"]."'";
+}
+
+    $query = "SELECT * FROM `domainswithlastscore` WHERE user_id='".$_SESSION["user_id"]."'";
     $result=$conn->query($query);
     if ( $result === FALSE) {
-        echo "error" . $domain . "<br />" . $conn->error;
+        echo "error" . $query . "<br />" . $conn->error;
     } else {
         if ($result->num_rows>0) {
             while($row=$result->fetch_assoc())
-            {
+            {            
                 $domains[] = $row;
             }
         }
@@ -41,12 +42,15 @@
     <ul>
     <?php foreach ($domains as $row):?>
         <li>
-            <a href="domain.php?id=<?php echo $row['id']; ?>">
-                <?php echo $row['domainname']; ?>
+            <a href="domain.php?id=<?php echo $row['domain_id']; ?>">
+                <?php echo $row['domainname']; ?> - <?php echo $row['score']; ?>
+
             </a>
         </li>
     <?php endforeach; ?>
     </ul>
+
+
     <?php include "footer.php"; ?>
 </body>
 </html>

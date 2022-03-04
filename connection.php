@@ -14,6 +14,7 @@ if ($conn->connect_error) {
 }
 //echo $_SERVER['REQUEST_URI'];
 
-if (!isset($_SESSION['user_id']) && $_SERVER['REQUEST_URI']!='/stageopdracht/login.php') {
+if (!isset($_SESSION['user_id']) && $_SERVER['REQUEST_URI']!='/stageopdracht/login.php'
+&& $_SERVER['REQUEST_URI']!='/stageopdracht/register.php') {
     header("Location: login.php");
 }
